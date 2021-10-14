@@ -1,0 +1,145 @@
+{% extends 'admin/baseadmin.html' %}
+<!-- aun no sé como se ve-->
+{% block infouser %}
+<div class="text-center">
+      <img src="{{ url_for('static', filename='img/user.png') }}" alt="Logo ECIJG" class="img-fluid img-thumbnail rounded" />
+      <p class="text-center"><strong><a class="nav-link" href="#">Editar</a></strong></p> 
+</div>
+{% endblock %}
+
+{% block saludouser %}
+<div class="alert alert-success" role="alert">
+      <strong>Usuario Docente</strong>
+      <p class="mb-0">Bienvenido, <strong>Nombre de Usuario</strong></p>
+</div>     
+{% endblock %}
+
+{% block menu %}
+<div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Inicio
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+                  <div class="d-grid gap-2">
+                        <a class="btn btn-primary" href="#" role="button">Información Básica</a>
+                        <a class="btn btn-primary" href="#" role="button">Información Académica</a>
+                        <a class="btn btn-primary" href="#" role="button">Asignatturas a Cargo</a>
+                  </div>
+          </div>
+        </div> 
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">  <!-- al presionar el boton, ¿deberia cargar la seccion de asignaturas en el mismo html?, o ¿deberia cargar otra pagina?-->
+          <button class="accordion-button collapsed" type="button" href="asignaturasDocente.html"  data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Asignaturas
+          </button>
+        </h2>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree"> <!-- al presionar el boton, ¿deberia cargar la seccion de cursos en el mismo html?, o ¿deberia cargar otra pagina?-->
+          <button class="accordion-button collapsed" type="button" href="cursosDocente.html"  data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Cursos
+          </button>
+        </h2>
+      </div>  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree"> <!-- al presionar el boton, ¿deberia cargar la seccion de calificaciones en el mismo html?, o ¿deberia cargar otra pagina?-->
+          <button class="accordion-button collapsed" type="button" href="calificacionDocente.html" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Calificaciones
+          </button>
+        </h2>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" href="comentariosDocente.html" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Mensajes
+          </button>
+        </h2>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" href="logout.html" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Cerrar Sesión
+          </button>
+        </h2>
+      </div>
+</div>  
+{% endblock %}
+
+{% block areatrabajo %}
+      <h3 class="text-center">Docente Nombre del Docente/h3>
+      
+      <div class="container">
+            <div class="row">
+              <div class="col-1">
+                  <img src="{{ url_for('static', filename='img/file.png') }}" alt="file" class="img-fluid rounded" />
+              </div>
+              <div class="col-11 text-xl-start">
+                 <h4>Informacion básica</h4>
+              </div>
+            </div>
+      </div>
+      <hr class="featurette-divider">
+      <div class="container">
+        <form class="form-floating">
+          <input type="text" class="form-control" id="floatingInputValue" placeholder="Lars Johan Yngve Lannerback" value="Lars Johan Yngve Lannerback" name="">
+          <label for="floatingInputValue">Nombres y Apellidos</label>
+          <input type="text" class="form-control" id="floatingInputValue" placeholder="1067.123.456" value="1067.123.456" name="">
+          <label for="floatingInputValue">Cédula</label>
+          <input type="text" class="form-control" id="floatingInputValue" placeholder="3005253636" value="3005253636" name="">
+          <label for="floatingInputValue">Correo Electrónico</label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="docente@gmail.com" aria-label="Correo electronico" aria-describedby="basic-addon2" name="">
+            <span class="input-group-text" id="basic-addon2">@example.com</span>
+          </div>
+        </form>    
+        <div class="col"></div>
+        <div class="col-4 border">
+            <h5 class="text-center"><strong>Editar</strong></h5>                
+            <img src="{{ url_for('static', filename='img/editar.png') }}" alt="editar" class="img-fluid rounded" href=""/>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-11 text-xl-start">
+             <h4>Informacion Académica</h4>
+          </div>
+        </div>
+      </div>
+        <div class="container">
+          <form class="form-floating">
+            <input type="text" class="form-control" id="floatingInputValue" placeholder="Ingenieria Mecatrónica" value="Ingenieria Mecatrónica" name="">
+            <label for="floatingInputValue">Pregrado</label>
+            <input type="text" class="form-control" id="floatingInputValue" placeholder="Maestria en Soldadura de Nanocomponentes" value="aestria en Soldadura de Nanocomponentes" name="">
+            <label for="floatingInputValue">Postgrado</label>
+            
+          </form>    
+          <div class="col"></div>
+          <div class="col-4 border">
+              <h5 class="text-center"><strong>Editar</strong></h5>                
+              <img src="{{ url_for('static', filename='img/editar.png') }}" alt="editar" class="img-fluid rounded"  href=""/>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-11 text-xl-start">
+               <h4>Asignaturas a Cargo</h4>
+            </div>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+                    
+
+      
+{% endblock %}
+

@@ -1,0 +1,170 @@
+{% extends 'admin/baseadmin.html' %}
+<!-- aun no sé como se ve-->
+{% block infouser %}
+<div class="text-center">
+      <img src="{{ url_for('static', filename='img/user.png') }}" alt="Logo ECIJG" class="img-fluid img-thumbnail rounded" />
+      <p class="text-center"><strong><a class="nav-link" href="#">Editar</a></strong></p> 
+</div>
+{% endblock %}
+
+{% block saludouser %}
+<div class="alert alert-success" role="alert">
+      <strong>Usuario Docente</strong>
+      <p class="mb-0">Bienvenido, <strong>Nombre de Usuario</strong></p>
+</div>     
+{% endblock %}
+
+{% block menu %}
+<div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Inicio
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+                  <div class="d-grid gap-2">
+                        <a class="btn btn-primary" href="#" role="button">Información Básica</a>
+                        <a class="btn btn-primary" href="#" role="button">Información Académica</a>
+                        <a class="btn btn-primary" href="#" role="button">Asignatturas a Cargo</a>
+                  </div>
+          </div>
+        </div> 
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">  <!-- al presionar el boton, ¿deberia cargar la seccion de asignaturas en el mismo html?, o ¿deberia cargar otra pagina?-->
+          <button class="accordion-button collapsed" type="button" href="asignaturasDocente.html"  data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Asignaturas
+          </button>
+        </h2>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree"> <!-- al presionar el boton, ¿deberia cargar la seccion de cursos en el mismo html?, o ¿deberia cargar otra pagina?-->
+          <button class="accordion-button collapsed" type="button" href="cursosDocente.html"  data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Cursos
+          </button>
+        </h2>
+      </div>  
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree"> <!-- al presionar el boton, ¿deberia cargar la seccion de calificaciones en el mismo html?, o ¿deberia cargar otra pagina?-->
+          <button class="accordion-button collapsed" type="button" href="calificacionDocente.html" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Calificaciones
+          </button>
+        </h2>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" href="comentariosDocente.html" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Mensajes
+          </button>
+        </h2>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed" type="button" href="logout.html" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Cerrar Sesión
+          </button>
+        </h2>
+      </div>
+</div>  
+{% endblock %}
+
+{% block areatrabajo %}
+      <h3 class="text-center"> Información del Estudiante </h3>
+      
+      <br/>
+      <div class="container">
+
+        <div class="row">
+          <div class="col-1">
+              <img src="{{ url_for('static', filename='img/file.png') }}" alt="file" class="img-fluid rounded" />
+          </div>
+
+          <div class="col-2 text-xl-start">
+             <h4>Informacion básica</h4>
+          </div>
+
+          <div class="col-8 ">
+            <h5 align="right" ><strong>Editar</strong></h5>                
+            <img align="right" src="{{ url_for('static', filename='img/editar.png') }}" alt="editar" class="img-fluid rounded" href="" alt="" width="30" height="30"/>
+          </div>
+          
+        </div>
+        <br/>
+
+
+        <hr class="featurette-divider">
+
+
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Nombre completo</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="-----">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Cédula</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="-----">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Telefono/Celular</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="-----">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Fecha de Nacimiento</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="-----">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Correo Electrónico</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="-----">
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputPassword1">ID Estudiante</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="-----">
+          </div>
+          <br/>
+
+
+          <div class="row">
+            <div class="col-1">
+                <img src="{{ url_for('static', filename='img/file.png') }}" alt="file" class="img-fluid rounded" />
+            </div>
+  
+            <div class="col-2 text-xl-start">
+               <h4>Información Académica</h4>
+            </div>
+  
+            <div class="col-8 ">
+              <h5 align="right" ><strong>Editar</strong></h5>                
+              <img align="right" src="{{ url_for('static', filename='img/editar.png') }}" alt="editar" class="img-fluid rounded" href="" alt="" width="30" height="30"/>
+            </div>
+            
+          </div>
+          <br/>
+  
+  
+          <hr class="featurette-divider">
+
+          <div class="form-group">
+            <label for="exampleInputPassword1">Facultad</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="-----">
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputPassword1">Carrera</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="-----">
+          </div>
+          <br/>
+
+        </div>
+      </div>
+                    
+
+      
+{% endblock %}
+
