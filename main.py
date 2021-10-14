@@ -123,3 +123,8 @@ def notasEstudiante():
 @app.route('/notadocente', methods=['GET', 'POST'])
 def notadocente():
     return render_template("admin/notasdocente.html", titulo="Calificaciones de Estudiante")
+
+#Decorador buscador de cursos
+@app.route('/busquedacursos', methods=['GET', 'POST'])
+def busqueda_cursos():
+    return render_template("admin/busquedacursos.html", titulo="Buscador de cursos")
